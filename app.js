@@ -13,13 +13,13 @@ const dbUrl =
   "mongodb+srv://namo:mudda@cluster0.skuq5.mongodb.net/NodeJS?retryWrites=true&w=majority";
 mongoose
   .connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((result) => console.log("connceted"));
+  .then((result) => console.log(" Database connceted successfully"));
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(session({ secret: "ChatV2", resave: false, saveUninitialized: true }));
+app.use(session({ secret: "Chit-chat", resave: false, saveUninitialized: true }));
 
 const io = socket(app.listen(3000));
 

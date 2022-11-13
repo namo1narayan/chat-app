@@ -24,11 +24,11 @@ router.post("/", async (req, res) => {
             console.log(req.session);
             res.redirect("/chat");
           } else {
-            res.send("birşeyler ters gitti!");
+            res.send("something wrong");
           }
         });
       } else {
-        res.send("Böyle bir kullanıcı bulunmamaktadır");
+        res.send("something wrong");
       }
     };
     users.find({ email: req.body.email }, login);

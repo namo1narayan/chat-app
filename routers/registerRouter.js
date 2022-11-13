@@ -27,7 +27,7 @@ router.post("/register", async (req, res) => {
           res.redirect("/");
         });
       } else {
-        res.send("böyle bir kullanıcı var");
+        res.send("something wrong");
       }
     } catch {
       console.log(error);
