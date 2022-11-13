@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
             console.log(req.session);
             res.redirect("/chat");
           } else {
-            res.send("something wrong");
+            res.send("Email/Password is incorrect");
           }
         });
       } else {
