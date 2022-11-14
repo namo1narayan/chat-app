@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const socket = require("socket.io");
 const app = express();
+const port=process.env.PORT || 3000;
 
 const LoginRouter = require("./routers/loginRouter");
 const RegisterRouter = require("./routers/RegisterRouter");
@@ -21,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({ secret: "Chit-chat", resave: false, saveUninitialized: true }));
 
-const io = socket(app.listen(3000));
+const io = socket(app.listen(port));
 
 io.on("connection", (socket) => {
   console.log(socket.id + " a user connected");
